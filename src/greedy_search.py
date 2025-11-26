@@ -31,3 +31,14 @@ def buscar_mejor_estacion(estaciones, estados_cubiertos):
             mejor_estacion = estacion
             mejor_cobertura = len(nuevos_estados)
     return mejor_estacion, mejor_cobertura
+
+def busqueda_greedy (estaciones, estaciones_necesitadas):
+    
+    estaciones_copia = estaciones.copy()
+    estados_cubiertos = set()
+    estaciones_necesitadas = []
+    ganancias = []
+    numero_estados_cubiertos = []
+
+    while estados_cubiertos < estaciones_necesitadas:
+        mejor_cobertura, mejor_estacion
