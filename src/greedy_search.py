@@ -22,7 +22,7 @@ estaciones["keleven"] = set(["mn", "mo", "ar"])
 estaciones["ktwelve"] = set(["la"])
 estaciones["kthirteen"] = set(["mo", "ar"])
 
-def buscar_mejor_estacion(estacion, estados_cubiertos):
+def buscar_mejor_estacion(estaciones, estados_cubiertos):
     mejor_estacion = ""
     mejor_cobertura = 0
     for estacion, estados_estacion in estaciones.items():
