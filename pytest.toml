@@ -2,5 +2,5 @@
 addopts = ["--strict-markers"]
 markers = [
     "buscar_mejor_estacion: test para la funcion 'buscar_mejor_estacion' en greedy_search.",
-    "busqueda:greedy: test para la funcion 'busqueda_greedy' en greedy_search.",
+    "busqueda_greedy: test para la funcion 'busqueda_greedy' en greedy_search.",
 ]
