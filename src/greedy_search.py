@@ -41,4 +41,16 @@ def busqueda_greedy (estaciones, estaciones_necesitadas):
     numero_estados_cubiertos = []
 
     while estados_cubiertos < estaciones_necesitadas:
-        mejor_cobertura, mejor_estacion
+        mejor_cobertura, mejor_estacion = buscar_mejor_estacion(
+            estaciones_copia, estados_cubiertos
+        )
+
+        if mejor_estacion:
+            estados_cubiertos |= estaciones_copia[mejor_estacion]
+            estaciones_necesitadas.append(mejor_estacion)
+            numero_estados_cubiertos.append(len(estados_cubiertos))
+            ganancias.append(mejor_cobertura)
+            del estaciones_copia[mejor_estacion]
+
+    return (estaciones_necesitadas, numero_estados_cubiertos, ganancias, estados_cubiertos)
+
