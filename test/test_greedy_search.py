@@ -25,7 +25,7 @@ def test_buscar_mejor_estacion():
         "kthree": set(["nv", "ut"]),
     }
 
-    mejor_estacion, mejor cobertura = buscar_mejor_estacion(estaciones, estados_cubiertos)
+    mejor_estacion, mejor_cobertura = buscar_mejor_estacion(estaciones, estados_cubiertos)
 
     assert mejor_estacion in ["kone", "ktwo"]
     assert mejor_cobertura == 3
