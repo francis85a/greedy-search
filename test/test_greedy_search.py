@@ -1,7 +1,7 @@
 import pytest
 from src.greedy_search import *
 
-def test_encontrar_mejor_estacion():
+def test_buscar_mejor_estacion():
     estados_cubiertos = set (["wa", "id"])
 
     estaciones = {
@@ -10,6 +10,6 @@ def test_encontrar_mejor_estacion():
         "kthree": set(["nv", "ut"]),
     }
     
-    mejor_estacion, mejor_covertura = encontrar_mejor_estacion(estaciones, estados_cubiertos)
+    mejor_estacion, mejor_covertura = buscar_mejor_estacion(estaciones, estados_cubiertos)
     assert mejor_estacion == "ktwo"
     assert mejor_covertura == 3
