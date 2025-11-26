@@ -1,3 +1,5 @@
+import random
+
 estaciones_necesitadas = set(["mt","wa","or","id","nv","ut","ca","az"])
 
 estaciones_añadidas = set(
@@ -54,3 +56,17 @@ def busqueda_greedy (estaciones, estados_necesitados):
 
     return (estaciones_necesitadas, numero_estados_cubiertos, ganancias, estados_cubiertos)
 
+
+def busqueda_local(estaciones, estados_necesitados):
+    NUM_BUSQUEDAS = 40
+    MAX_NUM_ESTACIONES = 10
+    num_estaciones_nocubiertas = []
+
+    for _ in range(NUM_BUSQUEDAS):
+        estados_cubiertos = set()
+        nombres_estaciones = list(estaciones.keys())
+        random_estaciones = random.sample(nombres_estaciones, k=MAX_NUM_ESTACIONES)
+        for estacion in random_estaciones:
+            estaciones_cubiertas |= (estaciones[estacion])
+        num_estaciones_nocubiertas.append(len(estados_necesitados - estados_cubiertos))
+    return num_estaciones_nocubiertas
