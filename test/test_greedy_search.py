@@ -10,6 +10,6 @@ def test_buscar_mejor_estacion():
         "kthree": set(["nv", "ut"]),
     }
     
-    mejor_estacion, mejor_covertura = buscar_mejor_estacion(estaciones, estados_cubiertos)
+    mejor_estacion, mejor_cobertura = buscar_mejor_estacion(estaciones, estados_cubiertos)
     assert mejor_estacion == "ktwo"
-    assert mejor_covertura == 3
+    assert mejor_cobertura == 3
