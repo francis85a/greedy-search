@@ -60,13 +60,13 @@ def busqueda_greedy (estaciones, estados_necesitados):
 def busqueda_local(estaciones, estados_necesitados):
     NUM_BUSQUEDAS = 40
     MAX_NUM_ESTACIONES = 10
-    num_estaciones_nocubiertas = []
+    num_estados_nocubiertos = []
 
     for _ in range(NUM_BUSQUEDAS):
         estados_cubiertos = set()
         nombres_estaciones = list(estaciones.keys())
         random_estaciones = random.sample(nombres_estaciones, k=MAX_NUM_ESTACIONES)
         for estacion in random_estaciones:
-            estaciones_cubiertas |= (estaciones[estacion])
-        num_estaciones_nocubiertas.append(len(estados_necesitados - estados_cubiertos))
-    return num_estaciones_nocubiertas
+            estados_cubiertos |= (estaciones[estacion])
+        num_estados_nocubiertos.append(len(estados_necesitados - estados_cubiertos))
+    return num_estados_nocubiertos

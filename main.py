@@ -13,3 +13,6 @@ def main():
 
     num_estados_nocubiertos = busqueda_local(estaciones.copy(), estaciones_necesitadas)
     plot.plot_busqueda_local(num_estados_nocubiertos)
+
+if __name__ == "__main__":
+    main()

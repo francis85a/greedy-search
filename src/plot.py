@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def plot_greedy_search_global(estaciones_necesitadas, num_estados_cubiertos, ganancias, estados_cubiertos):
+def plot_busqueda_greedy(estaciones_necesitadas, num_estados_cubiertos, ganancias, estados_cubiertos):
     """
     Grafica:
     - Barras: nuevos estados cubiertos por estación
@@ -20,7 +20,7 @@ def plot_greedy_search_global(estaciones_necesitadas, num_estados_cubiertos, gan
 
     # Línea: cobertura acumulada
     ax2 = ax1.twinx()
-    ax2.plot(estaciones_necesitadas, num_estados_cubiertos, marker="o", label="Total acumulado")
+    ax2.plot(estaciones_necesitadas, num_estados_cubiertos, color="red", marker="o", label="Total acumulado", zorder=2, linewidth=2)
     ax2.set_ylabel("Total estados cubiertos")
 
     # Títulos
@@ -36,7 +36,7 @@ def plot_greedy_search_global(estaciones_necesitadas, num_estados_cubiertos, gan
     plt.show()
 
 
-def plot_greedy_search_local(num_estados_nocubiertos):
+def plot_busqueda_local(num_estados_nocubiertos):
     """
     Grafica el resultado de la búsqueda local (estados sin cubrir por iteración)
     """
